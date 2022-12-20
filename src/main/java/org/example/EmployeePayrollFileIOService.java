@@ -1,5 +1,8 @@
 package org.example;
 
+import com.sun.source.tree.BreakTree;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,4 +24,14 @@ public class EmployeePayrollFileIOService {
             e.printStackTrace();
         }
     }
+
+    public void printData() {
+        try {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath())
+                    .forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
